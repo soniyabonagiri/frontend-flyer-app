@@ -1,0 +1,32 @@
+/* 1. SALLING YELLOW (Discount/Loud) */
+[data-theme="discount_yellow"] {
+  --bg-color: #FFDE00;
+  --text-color: #f8f1f1;
+  --card-bg: transparent; /* Cards blend into yellow */
+  --font-family: 'Arial Black', sans-serif;
+  --badge-color: #000000;
+  --badge-text: #FFDE00;
+  --header-size: 3rem;
+}
+
+/* 2. MIDNIGHT PREMIUM (Luxury/Dark) */
+[data-theme="midnight_premium"] {
+  --bg-color: #FFFFFF;
+  --text-color: #1e1c21;
+  --card-bg: #f7f5f3;
+  --font-family: 'Georgia', serif;
+  --badge-color: #D4AF37; /* Gold */
+  --badge-text: #e41919;
+  --header-size: 2.5rem;
+}
+
+/* 3. STANDARD (Clean/White) */
+[data-theme="standard"] {
+  --bg-color: #F4F4F9;
+  --text-color: #333333;
+  --card-bg: #FFFFFF;
+  --font-family: 'Arial', sans-serif;
+  --badge-color: #E63946; /* Red */
+  --badge-text: #FFFFFF;
+  --header-size: 2rem;
+}

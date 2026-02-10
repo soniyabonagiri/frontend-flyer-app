@@ -1,0 +1,421 @@
+.flyer-wrapper {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: var(--font-family);
+  min-height: 100vh;
+  padding: 30px;
+  transition: all 0.3s ease;
+}
+
+.flyer-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.flyer-header h1 {
+  font-size: var(--header-size);
+  text-transform: uppercase;
+  margin: 0;
+  color: white; /* Ensure title is white on red background */
+}
+
+.subtitle-background {
+    background-color: #b02129; /* A different shade of red */
+    padding: 5px 10px;
+    display: inline-block; /* To make background fit content */
+    margin-bottom: 10px; /* Space between subtitle and title */
+    color: white; /* Ensure text is visible on red background */
+}
+
+.product-grid {
+  display: grid;
+  /* Keep common grid properties here */
+  gap: 20px;
+}
+
+.product-grid-2col {
+  grid-template-columns: repeat(2, 1fr);
+  margin-bottom: 20px; /* Space between the two grids */
+}
+
+.product-grid-3col {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.product-grid-7-items {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 20px;
+}
+
+.product-grid-7-items .product-card.span-3 {
+  grid-column: span 3;
+}
+
+.product-grid-7-items .product-card.span-2 {
+  grid-column: span 2;
+}
+
+.product-card {
+  background: transparent; /* Remove background */
+  position: relative;
+  padding: 15px;
+  border-radius: 8px;
+  text-align: left; /* Generalize: was in .blue-section-products */
+  overflow: hidden;
+  box-shadow: var(--card-bg) == transparent ? none : 0 4px 6px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.product-card > img {
+    width: auto; /* Generalize: was in .blue-section-products */
+    max-width: 50%; /* Generalize: was in .blue-section-products */
+    margin-bottom: 0; /* Generalize: was in .blue-section-products */
+}
+
+.product-card h3 {
+    margin-top: 0; /* Generalize: was in .blue-section-products */
+    margin-bottom: 0; /* Generalize: was in .blue-section-products */
+    font-size: 0.8em; /* Generalize: was in .blue-section-products */
+}
+
+.product-card .price-and-savings-row {
+    margin-top: 0; /* Generalize: was in .blue-section-products */
+}
+
+.product-card .price-row {
+    align-items: flex-start; /* Generalize: was in .blue-section-products */
+}
+
+.product-card .badge-text {
+    font-size: 2.2em;
+    font-weight: bold;
+    color: yellow;
+    justify-content: flex-end;
+    align-self: center;
+    transform: translateX(-20px);
+}
+
+.page-break {
+}
+
+/* A4 Flyer Container */
+.flyer-custom {
+    width: 595px;
+    height: 842px;
+    border: 1px solid black;
+    margin: 40px auto;  /* center on page */
+    padding: 10px;
+}
+
+.first-page-layout {
+  position: relative;
+}
+
+.background-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.content-layer {
+  position: relative;
+  z-index: 1;
+  padding: 10px; /* Reduced padding as sections will handle their own padding */
+  display: flex;
+  flex-direction: column;
+  height: 100%; /* Make content layer take full height to manage its children's flex */
+}
+
+.content-top-section {
+  display: flex;
+  flex: 7;
+}
+
+.header-blue-bg {
+  flex: 3; /* 30% width, matches blue background */
+  display: flex; /* Enable flexbox for centering image */
+  justify-content: space-around; /* Distribute space around items */
+  align-items: center; /* Center horizontally */
+  flex-direction: column; /* Stack items vertically and center each */
+}
+
+.blue-section-products {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px; /* Space between product cards */
+}
+
+.blue-section-products .product-card {
+  width: 90%; /* Adjust width as needed */
+  background-color: transparent; /* Remove background */
+  color: white;
+  padding: 10px;
+  text-align: left; /* Move images to left */
+}
+
+.blue-section-products .product-card > img {
+    width: auto; /* Allow image to be aligned left */
+    max-width: 50%; /* Prevent image from being too large */
+    margin-bottom: 0; /* Remove padding below image */
+}
+
+.blue-section-products .product-card h3 {
+    margin-top: 0; /* Remove top margin from product name */
+    margin-bottom: 0; /* Remove bottom margin from product name */
+    font-size: 0.8em; /* Further decrease font size */
+}
+
+.blue-section-products .product-card .price-and-savings-row {
+    margin-top: 0; /* Remove gap between product name and price/savings row */
+}
+
+.price-row {
+  display: flex;
+  flex-direction: column; /* Stack price and MRP vertically */
+  align-items: flex-start; /* Center horizontally */
+}
+
+.price-row .current-price {
+  font-size: 0.8em; /* Further decrease price font size */
+}
+
+.mrp {
+  text-decoration: line-through;
+  opacity: 0.6;
+  font-size: 0.6rem;
+}
+.discount{
+  padding-left: -20px;
+}
+
+
+.price-and-savings-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between; /* Left side items at starting, right side item at the center (horizontally) */
+  align-items: flex-start; /* Left side items should move to top */
+}
+
+.blue-section-products .product-card .price-and-savings-row .price-row {
+    margin-top: 5px; /* Add some space after product name */
+    align-items: flex-start; /* Move price and MRP to left */
+}
+
+.blue-section-products .product-card .price-and-savings-row .badge-text {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: yellow; /* Change text color to yellow */
+    justify-content: flex-end; /* Align text to the right */
+    align-self: center; /* Vertically center the discount */
+    transform: translateX(-20px); /* Move discount to little left */
+}
+
+.blue-section-logo {
+    max-width: 90%;
+    max-height: 90%;
+    object-fit: contain;
+    border-radius: 10px; /* Make image slightly curved */
+    /* margin-top: -100px; Move image slightly up */
+    margin-left: -20px;
+}
+
+.header-red-bg {
+  display: flex;
+  flex-direction: column;
+  flex: 7; /* 70% width, matches red background */
+  position: relative; /* Establish positioning context for absolute children */
+  padding-top: 50px; /* Make space for the light blue strip */
+  color: white; /* Ensure text is visible on red background */
+}
+
+
+.subtitle-light-blue-strip {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 50px; /* Matches the height of the light blue gradient */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white; /* Ensure text is visible on light blue background */
+  font-weight: bold;
+}
+
+.subtitle-light-blue-strip p {
+    margin: -25px 0 0 0; /* Move subtitle slightly up */
+    padding: 0; /* Remove default paragraph padding */
+    font-size: 1.2em; /* Make text a little bigger */
+}
+
+.red-bg-products {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+.red-bg-products .product-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: transparent; /* Remove background for visibility */
+  width: 45%; /* Adjust width to fit two cards in a row */
+  color: black; /* Ensure text is visible */
+  padding: 10px;
+  box-shadow: none; /* Remove box shadow as well for a cleaner look */
+}
+
+.red-bg-products .product-card h3 {
+  font-size: 0.7em; /* Decreased font size for readability */
+  color: white;
+}
+
+.red-bg-products .product-card .current-price {
+  color: white;
+}
+
+.red-bg-products .product-card .mrp {
+  color: white;
+  opacity: 0.8; /* Adjust for visibility on white background */
+}
+
+.red-bg-products .product-card > img {
+  max-width: 80%; /* Increase image size */
+  object-fit: contain; /* Ensure image scales properly */
+}
+
+.bg-red {
+  background-color: red;
+}
+
+.bg-yellow {
+  background-color: yellow;
+}
+
+.bg-blue {
+  background-color: blue;
+}
+
+.red-discount-text .badge-text {
+  color: red;
+}
+
+.white-text h3,
+.white-text .current-price,
+.white-text .mrp {
+  color: white;
+}
+
+.product-grid .product-card .badge-text {
+  font-size: 1em; /* Decrease discount size for these products */
+}
+
+.blue-product-image-padding > img {
+  padding: 10px;
+}
+
+.red-bg-products .price-and-savings-row {
+  flex-direction: column;
+  align-items: center;
+}
+
+.data-spot-bubble {
+  position: relative;
+  background: yellow;
+  border-radius: .4em;
+  padding: 5px 25px; /* Further increased horizontal padding */
+  color: red;
+  margin-bottom: 10px; /* Space between bubble and discount */
+  text-align: center;
+  font-size: 1.1em;
+}
+
+.data-spot-bubble::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border: 10px solid transparent;
+  border-top-color: yellow;
+  border-bottom: 0;
+  margin-left: -10px;
+  margin-bottom: -10px;
+}
+
+.product-grid-container { /* New container for product grid to give it flex properties */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 3; /* Product grid takes remaining 30% height of content-layer */
+    padding: 20px; /* Add padding to product grid area */
+}
+
+.top-section {
+  display: flex;
+  flex: 7; /* 70% height */
+}
+
+.blue-section {
+  background-color: #005a9c;
+  flex: 3; /* 30% width */
+}
+
+.red-section {
+  background: linear-gradient(to bottom, #4a90e2 50px, #d9232d 50px);
+  flex: 7; /* 70% width */
+}
+
+.white-section {
+  background: linear-gradient(to right, red 33.3%, yellow 33.3%, yellow 66.6%, #005a9c 66.6%);
+  flex: 3; /* 25% height */
+}
+.flyer-a4 {
+  width: 794px;        /* A4 width */
+  min-height: 1123px; /* A4 height */
+  margin: 40px auto;  /* center on page */
+  background: #ffffff;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  padding: 32px;
+  box-sizing: border-box;
+}
+ @page {
+  size: A4;
+  margin: 0;
+}
+
+ @media print {
+  body {
+    margin: 0;
+  }
+
+  .flyer-a4 {
+    width: 210mm;
+    height: 297mm;
+    box-shadow: none;
+    margin: 0;
+    padding: 20mm;
+  }
+}
+
+.product-image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0;
+  margin-bottom: 10px;
+}
+
+.product-image-container .product-image {
+  width: 50%; /* Or adjust as needed */
+  object-fit: contain;
+}
